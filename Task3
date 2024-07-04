@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>HTML Semantics</title>
+
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+          }
+
+          ul {
+            list-style-type: none;
+            height: 275px;
+            width: 315px;
+            padding: 0;
+            margin: 0;
+            background-color: #333333;
+            font-family:Arial, Helvetica, sans-serif;
+           }
+
+           li {
+           float:none;
+           }
+
+           li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+           }
+
+           li a:hover{
+            background-color: #111111;
+            
+           }
+
+           h1 {
+             background-color: antiquewhite;
+             font-size:large;
+             text-align: center;
+             padding: 40px;
+             font-size: 50px;
+           }
+           section{
+            display: flex;
+           }
+
+           main{
+            background-color: aquamarine;
+            height: 225px;
+            width: 1000px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 100%;
+           }
+
+           main h2{
+             font-size: 40px;
+             color:brown;
+           }
+
+           main article{
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 30px;
+            padding: 15px;
+            background-color: cadetblue;
+           }
+
+           .form{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 230px;
+            background-color: whitesmoke;
+            padding: 20px 0 20px 0;
+           }
+           .form label{
+            font-size: 16px;
+            font-weight: 200;
+           }
+           .form input{
+            width: 300px;
+            height: 20px;
+           }
+           .form button{
+            padding: 5px;
+            margin: 10px;
+           }
+           
+
+
+            @media only screen and (max-width: 768px){
+              h1{
+                width: auto;
+                height: 100px;
+                background-color:lightgray;
+                text-align: center;
+                align-content: center;
+              }
+
+              section{
+                display: flex;
+                flex-direction: column;
+              }
+
+              section ul{
+                width: auto;
+                height: 275px;
+                padding: 0; 
+                text-align: center;
+                justify-content: center;
+              }
+              section ul a{
+                color: #fff;
+              }
+            
+              section main{
+                width:auto;
+                height: 300px;
+                background-color:rgb(182, 167, 119);
+              }
+
+              section main h2{
+                width: auto;
+                font-size: 35px;
+                color: black;
+              }
+
+              section main article{
+                width: auto;
+                font-size: 20px;
+                background-color: rgb(156, 97, 148);
+                color: aquamarine;
+              }
+
+          }
+
+        </style>
+    </head>
+
+    <body>
+
+
+    <h1><b>Header</b></h1>
+    <section>
+        <nav>
+            <ul>
+               <li><a href="stylesheet1"  title="Go to Sheet1" target="_blank">StyleSheet1</a></li>
+               <li><a href="stylesheet2"  title="Go to Sheet2" target="_blank">StyleSheet2</a></li>
+               <li><a href="stylesheet3"  title="Go to Sheet3" target="_blank">StyleSheet3</a></li>
+               <li><a href="stylesheet4"  title="Go to Sheet4" target="_blank">StyleSheet4</a></li>
+               <li><a href="stylesheet5"  title="Go to Sheet5" target="_blank">StyleSheet5</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Main Content</h2>   
+            <article>Content1</article>
+            <article>Content2</article>
+        </main>
+    </section>
+
+    <div class="form">
+
+      <form name="myform" id="userForm" method="post">
+      <div id="message"></div>
+
+      <h3>Contact Us:-</h3>
+
+
+      <label>Username:-</label><br>
+      <input type="text" placeholder="Username" required minlength="4" ><br>
+
+      <label>Email:-</label><br>
+      <input type="email" placeholder="Email" required><br>
+
+      <label>Password:-</label><br>
+      <input type="password" placeholder="Password" required><br>
+
+      <label>Write a message:-</label><br>
+      <input type="text" required minlength="4" maxlength="100"><br>
+      <button type="submit" id="submit">submit</button><br>
+    </form>
+    </div>
+
+        <footer>
+            <h1><b>Footer</b></h1>
+          </footer>
+
+    </body>
+
+    <script>
+
+function validateForm(username, email, password) {
+        let isValid = true;
+
+        if (!username || username.length < 3) {
+            alert('Username must be at least 3 characters long.');
+            isValid = false;
+        }
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert('Please enter a valid email address.');
+            isValid = false;
+        }
+
+        if (!password || password.length < 6) {
+            alert('Password must be at least 6 characters long.');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+    </script>
+
+</html>
